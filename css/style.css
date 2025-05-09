@@ -508,22 +508,42 @@ span {
     }
 }
 
-#toeic-image img {
-    max-width: 100%;
-    height: auto;
-    margin-top: 20px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-#toeic-image img:hover {
-    transform: scale(1.05);  /* Hiệu ứng phóng to khi hover */
+/* Thêm hiệu ứng cho overlay */
+.image-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
 }
 
 .image-overlay img {
+    max-width: 100%;   /* Giới hạn ảnh phóng to tối đa 90% chiều rộng */
+    max-height: 100%;  /* Giới hạn ảnh phóng to tối đa 90% chiều cao */
+    cursor: zoom-out;
     transition: transform 0.3s ease;
 }
 
-.image-overlay img:hover {
-    transform: scale(1.1);  /* Hiệu ứng phóng to khi hover trong chế độ phóng đại */
+.image-container {
+    display: none;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.image-container img {
+    width: 200px; /* hoặc dùng max-width */
+    height: 100px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    cursor: zoom-in;
+    transition: transform 0.2s ease;
+}
+
+.image-container img:hover {
+    transform: scale(1.05);
 }

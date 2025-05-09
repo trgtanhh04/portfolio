@@ -64,7 +64,6 @@
             <button class="btn" id="read-more-btn" onclick="toggleReadMore()">Read More</button>
         </div>
     </section>
-
     <!-- Achievement -->
     <section class="services" id="services">
         <h2 class="heading">My <span>Achievement</span></h2>
@@ -73,27 +72,33 @@
                 <i class="bx bxs-trophy"></i>
                 <h3>TOEIC</h3>
                 <p>This certificate is issued by IIG Vietnam — the exclusive organization authorized to administer and award the TOEIC test in Vietnam.</p>
-                <a href="javascript:void(0);" class="btn" onclick="toggleTOEICImage()">Read More</a>
-                <div id="toeic-image" style="display: none;">
-                    <img src="image/toeic.jpg" alt="TOEIC Certificate" onclick="zoomImage(this)">
+                <a href="javascript:void(0);" class="btn" onclick="toggleImage(this)">Read More</a>
+                <div class="image-container">
+                     <img src="image/toeic.jpg" alt="TOEIC Certificate" onclick="zoomImage(this)">
                 </div>
             </div>
-
             <div class="services-box">
                 <i class='bx bx-code-alt'></i>
-                <h3>Design Pipeline</h3>
+                <h3>Dong Hanh Scholarship</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.</p>
-                <a href="#" class="btn">Read More</a>
+                <a href="javascript:void(0);" class="btn" onclick="toggleImage(this)">Read More</a>
+                <div class="image-container">
+                    <img src="image/scholarship-1.jpg" alt="Machine Learning" onclick="zoomImage(this)">
+                </div>
             </div>
 
             <div class="services-box">
                 <i class='bx bx-code-alt'></i>
                 <h3>Machine Learning</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.</p>
-                <a href="#" class="btn">Read More</a>
+                <a href="javascript:void(0);" class="btn" onclick="toggleImage(this)">Read More</a>
+                <div class="image-container">
+                    <img src="image/ml2.jpg" alt="Machine Learning" onclick="zoomImage(this)">
+                </div>
             </div>
         </div>
     </section>
+
 
     <!-- Portfolio -->
      <section class="portfolio" id="portfolio">
