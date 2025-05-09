@@ -536,8 +536,8 @@ span {
 }
 
 .image-container img {
-    width: 200px; /* hoặc dùng max-width */
-    height: 100px;
+    width: 250px; /* hoặc dùng max-width */
+    height: 120px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
     cursor: zoom-in;
@@ -546,4 +546,59 @@ span {
 
 .image-container img:hover {
     transform: scale(1.05);
+}
+
+/* Thêm hiệu ứng cho about */
+
+.about {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    padding: 2rem;
+}
+
+.about-img img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.about-img img:hover {
+    transform: scale(1.05);
+}
+
+.about-content p,
+.about-content ul li,
+.about-content blockquote {
+    font-size: 2rem; /* to chữ nội dung */
+    line-height: 1.6;
+}
+
+.about-content {
+    flex: 1;
+}
+
+.about-content .heading {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.about-content ul {
+    padding-left: 1rem;
+    margin-top: 1rem;
+}
+
+.about-content ul li {
+    margin-bottom: 0.5rem;
+}
+
+blockquote {
+    font-style: italic;
+    color: #ccc;
+    margin-top: 1rem;
+    border-left: 4px solid #ccc;
+    padding-left: 1rem;
 }

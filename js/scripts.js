@@ -69,35 +69,6 @@ function toggleImage(button) {
     }
 }
 
-// function zoomImage(img) {
-//     // Tạo một overlay để phóng to ảnh
-//     var overlay = document.createElement('div');
-//     overlay.classList.add('image-overlay');
-//     overlay.style.position = 'fixed';
-//     overlay.style.top = '0';
-//     overlay.style.left = '0';
-//     overlay.style.width = '100vw';
-//     overlay.style.height = '100vh';
-//     overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
-//     overlay.style.display = 'flex';
-//     overlay.style.justifyContent = 'center';
-//     overlay.style.alignItems = 'center';
-//     overlay.style.zIndex = '1000';
-
-//     var enlargedImage = document.createElement('img');
-//     enlargedImage.src = img.src;
-//     enlargedImage.style.maxWidth = '90%';
-//     enlargedImage.style.maxHeight = '90%';
-//     enlargedImage.style.cursor = 'zoom-out';
-
-//     overlay.onclick = function () {
-//         document.body.removeChild(overlay);
-//     };
-
-//     overlay.appendChild(enlargedImage);
-//     document.body.appendChild(overlay);
-// }
-
 function toggleImage(button) {
     const box = button.closest('.services-box');
     const imageContainer = box.querySelector('.image-container');
@@ -134,3 +105,39 @@ function zoomImage(img) {
 
     document.body.appendChild(overlay);
 }
+
+// ----------------------------------
+
+const text = "Truong Tien Anh";
+let index = 0;
+const typedText = document.querySelector(".typed-text");
+
+function typeEffect() {
+    if (index < text.length) {
+        typedText.textContent += text.charAt(index);
+        index++;
+        setTimeout(typeEffect, 100);
+    }
+}
+typeEffect();
+
+// ----------------------------------
+function typeEffect1(element, text, speed) {
+        let index = 0;
+        function type() {
+            if (index < text.length) {
+                element.textContent += text[index];
+                index++;
+                setTimeout(type, speed);
+            }
+        }
+        type();
+    }
+
+    // Lấy thẻ blockquote
+const quoteElement = document.getElementById('quote');
+const quoteText = quoteElement.textContent.trim(); // Lấy nội dung và loại bỏ khoảng trắng
+quoteElement.textContent = ''; // Xóa nội dung ban đầu
+
+    // Hiển thị từng chữ
+typeEffect1(quoteElement, quoteText, 30); // 100ms mỗi chữ
