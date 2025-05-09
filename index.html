@@ -16,7 +16,7 @@
         <nav class="navbar">
             <a href="#home" class="active">Home</a></li>
             <a href="#about" class="">About</a></li>
-            <a href="#services" class="">Services</a></li>
+            <a href="#services" class="">Achievement</a></li>
             <a href="#portfolio" class="">Portfolio</a></li>
             <a href="#contact" class="">Contact</a></li>
         </nav>
@@ -40,49 +40,60 @@
         </div>
 
         <div class="home-img">
-            <img src="image/image-face.jpg" height="50%" width="50%" alt="">
+            <img src="image/image-face.jpg" height="10%" width="50%" alt="">
         </div>
     </section>
 
     <!-- About -->
-     <section class="about" id="about">
+    <section class="about" id="about">
         <div class="about-img">
-            <img src="image/image-face.jpg" height="50%" width="50%" alt="">
+            <img src="image/image-face-1.jpg" height="10%" width="50%" alt="Truong Tien Anh">
         </div>
         <div class="about-content">
             <h2 class="heading">About Me</h2>
-            <h3>I'm a <span>Data Engineer</span></h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.</p>
-            <a href="#" class="btn">Read More</a>
+            <h3>I'm <span>Truong Tien Anh</span></h3>
+            <p id="about-text">
+                Hello! My name is <strong>Truong Tien Anh</strong>, born in <strong>2004</strong>. 
+                I am currently a student at the <strong>University of Science - VNUHCM</strong>, pursuing my passion for 
+                <strong>Data Engineering</strong> and technology. 
+                <span id="extra-text" style="display: none;">
+                    I was honored to be the <strong>Valedictorian</strong> (Top 1) of the A00 block at Ton Duc Thang High School. 
+                    I am proficient in Python, SQL, and data processing, and I am continuously exploring Machine Learning and AI.
+                </span>
+            </p>
+            <button class="btn" id="read-more-btn" onclick="toggleReadMore()">Read More</button>
         </div>
-     </section>
+    </section>
 
-    <!-- Services -->
-     <section class="services" id="services">
-        <h2 class="heading">Our <span>Services</span></h2>
+    <!-- Achievement -->
+    <section class="services" id="services">
+        <h2 class="heading">My <span>Achievement</span></h2>
         <div class="services-container">
             <div class="services-box">
-                <i class='bx bx-code-alt' ></i>
-                <h3>Web Design</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.</p>
-                <a href="#" class="btn">Read More</a>
+                <i class="bx bxs-trophy"></i>
+                <h3>TOEIC</h3>
+                <p>This certificate is issued by IIG Vietnam — the exclusive organization authorized to administer and award the TOEIC test in Vietnam.</p>
+                <a href="javascript:void(0);" class="btn" onclick="toggleTOEICImage()">Read More</a>
+                <div id="toeic-image" style="display: none;">
+                    <img src="image/toeic.jpg" alt="TOEIC Certificate" onclick="zoomImage(this)">
+                </div>
             </div>
 
             <div class="services-box">
-                <i class='bx bx-code-alt' ></i>
+                <i class='bx bx-code-alt'></i>
                 <h3>Design Pipeline</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.</p>
                 <a href="#" class="btn">Read More</a>
             </div>
 
             <div class="services-box">
-                <i class='bx bx-code-alt' ></i>
+                <i class='bx bx-code-alt'></i>
                 <h3>Machine Learning</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.</p>
                 <a href="#" class="btn">Read More</a>
             </div>
         </div>
-     </section>
+    </section>
 
     <!-- Portfolio -->
      <section class="portfolio" id="portfolio">

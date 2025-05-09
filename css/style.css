@@ -507,3 +507,23 @@ span {
         margin-top: 2rem;
     }
 }
+
+#toeic-image img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#toeic-image img:hover {
+    transform: scale(1.05);  /* Hiệu ứng phóng to khi hover */
+}
+
+.image-overlay img {
+    transition: transform 0.3s ease;
+}
+
+.image-overlay img:hover {
+    transform: scale(1.1);  /* Hiệu ứng phóng to khi hover trong chế độ phóng đại */
+}
