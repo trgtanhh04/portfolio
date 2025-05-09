@@ -1,3 +1,4 @@
+
 let menuIcon = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
 menuIcon.onclick = () => {
@@ -134,10 +135,43 @@ function typeEffect1(element, text, speed) {
         type();
     }
 
-    // Lấy thẻ blockquote
+// Lấy thẻ blockquote
 const quoteElement = document.getElementById('quote');
 const quoteText = quoteElement.textContent.trim(); // Lấy nội dung và loại bỏ khoảng trắng
 quoteElement.textContent = ''; // Xóa nội dung ban đầu
-
-    // Hiển thị từng chữ
 typeEffect1(quoteElement, quoteText, 30); // 100ms mỗi chữ
+
+// ----------------------------------
+// send email
+window.onload = function () {
+    emailjs.init(ENV.EMAILJS_PUBLIC_KEY);
+
+    document.getElementById("contact-form").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const formData = {
+            full_name: document.getElementById("full-name").value,
+            email: document.getElementById("email").value,
+            reply_to: document.getElementById("email").value,
+            mobile_number: document.getElementById("mobile-number").value,
+            email_subject: document.getElementById("email-subject").value,
+            message: document.getElementById("message").value,
+        };
+
+        // Gửi email đến người nhận (chủ trang)
+        emailjs.send(ENV.EMAILJS_SERVICE_ID, ENV.EMAILJS_TEMPLATE_ID_1, formData)
+            .then(() => alert("Gửi email đến bạn thành công!"))
+            .catch(error => {
+                alert("Lỗi gửi email cho bạn.");
+                console.error(error);
+            });
+
+        // Gửi email phản hồi tự động đến người dùng
+        emailjs.send(ENV.EMAILJS_SERVICE_ID, ENV.EMAILJS_TEMPLATE_ID_2, formData)
+            .then(() => alert("Đã gửi phản hồi tới người dùng!"))
+            .catch(error => {
+                alert("Lỗi gửi phản hồi.");
+                console.error(error);
+            });
+    });
+};
