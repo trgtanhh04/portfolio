@@ -144,7 +144,7 @@ typeEffect1(quoteElement, quoteText, 30); // 100ms mỗi chữ
 // ----------------------------------
 // send email
 window.onload = function () {
-    emailjs.init(ENV.EMAILJS_PUBLIC_KEY);
+    emailjs.init(window.ENV.EMAILJS_PUBLIC_KEY);
 
     document.getElementById("contact-form").addEventListener("submit", function (e) {
         e.preventDefault();
@@ -159,7 +159,7 @@ window.onload = function () {
         };
 
         // Gửi email đến người nhận (chủ trang)
-        emailjs.send(ENV.EMAILJS_SERVICE_ID, ENV.EMAILJS_TEMPLATE_ID_1, formData)
+        emailjs.send(window.ENV.EMAILJS_SERVICE_ID, window.ENV.EMAILJS_TEMPLATE_ID_1, formData)
             .then(() => alert("Gửi email đến bạn thành công!"))
             .catch(error => {
                 alert("Lỗi gửi email cho bạn.");
@@ -167,7 +167,7 @@ window.onload = function () {
             });
 
         // Gửi email phản hồi tự động đến người dùng
-        emailjs.send(ENV.EMAILJS_SERVICE_ID, ENV.EMAILJS_TEMPLATE_ID_2, formData)
+        emailjs.send(window.ENV.EMAILJS_SERVICE_ID, window.ENV.EMAILJS_TEMPLATE_ID_2, formData)
             .then(() => alert("Đã gửi phản hồi tới người dùng!"))
             .catch(error => {
                 alert("Lỗi gửi phản hồi.");
