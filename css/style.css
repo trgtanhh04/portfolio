@@ -670,9 +670,113 @@ blockquote {
 }
 
 
-/* Hiệu ứng khi nhấn */
+/* Hiệu ứng khi nhấn
 .btn:active {
     background-color: #003f8a;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.12);
     transform: translateY(2px);
+}
+
+.enhanced-experience {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+.experience-card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    padding: 2rem 1.5rem;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+.experience-card:hover {
+    transform: translateY(-10px) scale(1.04);
+    box-shadow: 0 16px 32px rgba(0,0,0,0.12);
+}
+.icon-wrapper {
+    font-size: 3rem;
+    color: #0077ff;
+    margin-bottom: 1rem;
+}
+.card-content h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+    color: #222;
+}
+.card-content p {
+    color: #555;
+    font-size: 1rem;
+} */
+
+
+.timeline {
+    position: relative;
+    margin: 2.5rem auto 2.5rem auto;
+    padding-left: 60px;
+    max-width: 1100px;
+    width: 90%;
+}
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 32px;
+    top: 0;
+    width: 6px;
+    height: 100%;
+    background: #222;
+    border-radius: 3px;
+}
+.timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+}
+.timeline-dot {
+    position: absolute;
+    left: 20px;
+    top: 18px;
+    width: 28px;
+    height: 28px;
+    background: #222;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0 0 0 6px #222;
+    z-index: 1;
+    transition: background 0.3s;
+}
+.timeline-dot.active {
+    background: #00e676;
+    box-shadow: 0 0 0 6px #00e676;
+}
+.timeline-content {
+    background: #181818;
+    color: #fff;
+    border-radius: 18px;
+    padding: 2.2rem 2.5rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.16);
+    margin-left: 70px;
+    font-size: 1.18rem;
+}
+.timeline-content h3 {
+    margin: 0 0 0.7rem 0;
+    font-size: 1.45rem;
+    font-weight: 700;
+}
+.timeline-date {
+    color: #00e6e6;
+    font-size: 1.08rem;
+    font-weight: 500;
+    margin-left: 0.7rem;
+}
+.timeline-content ul {
+    margin: 0.7rem 0 0 0;
+    padding-left: 1.5rem;
+}
+.timeline-content li {
+    margin-bottom: 0.5rem;
+    font-size: 1.08rem;
 }
