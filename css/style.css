@@ -28,6 +28,46 @@ body {
     color: var(--text-color);
 }
 
+/* Galaxy background canvas */
+.galaxy-canvas {
+    position: fixed;
+    inset: 0; /* top:0; right:0; bottom:0; left:0 */
+    width: 100vw;
+    height: 100vh;
+    z-index: 0; /* behind main UI which uses z-index:100 for header */
+    pointer-events: none; /* don't block clicks */
+    opacity: 0.95;
+    mix-blend-mode: normal;
+    transition: opacity 0.6s ease;
+}
+
+/* Place main content above the canvas */
+body > *:not(.galaxy-canvas) {
+    position: relative;
+    z-index: 1;
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .galaxy-canvas {
+        display: none;
+    }
+}
+
+/* Planet label hints and styling (canvas labels; ensure readable) */
+.galaxy-legend {
+    position: fixed;
+    right: 1.6rem;
+    bottom: 1.6rem;
+    z-index: 120;
+    background: rgba(10,12,16,0.6);
+    padding: .6rem 1rem;
+    border-radius: .8rem;
+    color: #cfeffd;
+    font-size: 1.2rem;
+    border: 1px solid rgba(255,255,255,0.04);
+}
+
 section {
     min-height: 100vh;
     padding: 10rem 9% 2rem 9%;
@@ -193,21 +233,23 @@ span {
 }
 
 .services-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.4rem;
+    align-items: stretch;
 }
 
 .services-container .services-box {
-    flex: 1 1 30rem;
     background: var(--second-bg-color);
     padding: 3rem 2rem 4rem;
     border-radius: 2rem;
     text-align: center;
     border: .2rem solid var(--bg-color);
-    transition: .5s ease;
+    transition: .35s ease, transform .35s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 36rem; /* ensure visual uniformity */
 }
 
 .services-container .services-box:hover {
@@ -228,6 +270,12 @@ span {
 .services-box p {
     font-size: 1.6rem;
     margin: 1rem 0 3rem ;
+}
+
+/* Ensure Read More button sits at bottom of the card */
+.services-box .btn {
+    margin-top: auto;
+    align-self: center;
 }
 
 .portfolio {
@@ -382,6 +430,67 @@ span {
 .footer-iconTop a i {
     font-size: 2.5rem;
     color: var(--second-bg-color);
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-dialog {
+    background: var(--second-bg-color);
+    color: var(--text-color);
+    padding: 2rem;
+    border-radius: 1rem;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 /* BREAKPOINTS */
@@ -597,8 +706,11 @@ span {
 }
 
 .image-container {
-    display: none;
-    margin-top: 10px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 420ms ease, opacity 320ms ease;
+    margin-top: 1.6rem;
     text-align: center;
 }
 
@@ -609,6 +721,11 @@ span {
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
     cursor: zoom-in;
     transition: transform 0.2s ease;
+}
+
+.image-container.active {
+    max-height: 400px; /* allow the image to show */
+    opacity: 1;
 }
 
 .image-container img:hover {
@@ -754,11 +871,13 @@ blockquote {
     box-shadow: 0 0 0 10px #00e676;
 }
 .timeline-content {
-    background: #181818;
-    color: #fff;
+    /* match Achievement card background for a lighter gray look */
+    background: var(--second-bg-color);
+    color: var(--text-color);
     border-radius: 28px;
     padding: 3rem 3.5rem;
-    box-shadow: 0 12px 48px rgba(0,0,0,0.18);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+    border: 1px solid rgba(255,255,255,0.03);
     margin-left: 110px;
     font-size: 1.35rem;
 }
@@ -780,4 +899,33 @@ blockquote {
 .timeline-content li {
     margin-bottom: 0.7rem;
     font-size: 1.25rem;
+}
+
+/* Starfield canvas full-cover style (Three.js) */
+#starfield {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+    mix-blend-mode: screen;
+}
+
+.const-label {
+    position: fixed;
+    color: #cfe6ff;
+    font-size: 1.2rem;
+    padding: .25rem .6rem;
+    background: rgba(5,10,20,0.45);
+    border-radius: .6rem;
+    transform: translate(-50%,-50%);
+    pointer-events: none;
+    transition: opacity .25s ease, transform .25s ease;
+    z-index: 110;
+}
+
+/* Give trail lines a soft blur via fallback filter */
+.meteor-trail-fallback {
+    filter: blur(0.6px);
 }

@@ -11,6 +11,9 @@
 </head>
 
 <body>
+    <!-- Galaxy animated background canvas -->
+    <canvas id="galaxy-canvas" class="galaxy-canvas" aria-hidden="true"></canvas>
+
     <header class="header">
         <a href="#" class="logo">Portfolio</a>
         <i class='bx bx-menu' id="menu-icon"></i>
@@ -85,12 +88,21 @@
                 <div class="timeline-content">
                     <h3><strong>Nexlab Technology</strong> <span class="timeline-date">| June. 2025 - current</span></h3>
                     <p><strong>AI Engineer</strong></p>
-                    <ul>
-                        <li>1. Scan CV Project: Developed an AI-driven system to scan, extract, and enhance CV data for streamlined
- recruitment. Integrated advanced retrieval techniques (RAG, Text2Sql, etc.) for efficient candidate matching.</li>
-                        <li>2. Sales Agent Development: Contributed to building a chatbot for querying retail data on GCS, enabling
- real-time insights and improving decision-making in retail management. Integrated MacSQL, a multi-agent system,
- for optimized SQL query generation and execution across distributed databases, enhancing data retrieval efficiency.</li>
+                            <ul>
+                            <li>
+                                <p>
+                                <strong>1. Scan CV Project:</strong>
+                                Developed an AI-driven system to scan, extract, and enhance CV data for streamlined recruitment.
+                                Integrated retrieval techniques (RAG, Text2SQL, etc.) for efficient candidate matching.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                <strong>2. Sales Agent Development:</strong>
+                                Built a chatbot for querying retail data on GCS, enabling real-time insights for retail management.
+                                Integrated MacSQL (multi-agent) for optimized SQL generation and execution across distributed DBs.
+                                </p>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -120,40 +132,39 @@
             </div> -->
         </div>
 
-    <!-- Achievement -->
-    <section class="services" id="services">
+    <!-- Achievement (compact grid) -->
+    <section class="achievements" id="services">
         <h2 class="heading">My <span>Achievement</span></h2>
-        <div class="services-container">
-            <div class="services-box">
-                <i class="bx bxs-trophy"></i>
-                <h3>TOEIC</h3>
-                <p>This certificate is issued by IIG Vietnam — the exclusive organization authorized to administer and award the TOEIC test in Vietnam.</p>
-                <a href="javascript:void(0);" class="btn" onclick="toggleImage(this)">Read More</a>
-                <div class="image-container">
-                     <img src="https://res.cloudinary.com/dpfnbbiq4/image/upload/v1746801845/toeic_dqr0ub.jpg" alt="TOEIC Certificate" onclick="zoomImage(this)">
-                </div>
+        <div class="achievement-list">
+            <div class="achievement-item">
+                <h4>TOEIC</h4>
+                <p>2023 • Exam</p>
+                <p>Issued by IIG Vietnam — the exclusive organization authorized to administer and award the TOEIC test in Vietnam.</p>
             </div>
-            <div class="services-box">
-                <i class='bx bxs-graduation'></i>
-                <h3>Dong Hanh Scholarship</h3>
-                <p>Dong Hanh Scholarship is awarded to Vietnamese students with strong academic performance (GPA above 8.0) and a spirit of perseverance.</p>
-                <a href="javascript:void(0);" class="btn" onclick="toggleImage(this)">Read More</a>
-                <div class="image-container">
-                    <img src="https://res.cloudinary.com/dpfnbbiq4/image/upload/v1746801845/scholarship-1_jhtvpo.jpg" alt="Machine Learning" onclick="zoomImage(this)">
-                </div>
+            <div class="achievement-item">
+                <h4>Dong Hanh Scholarship</h4>
+                <p>2024 • Scholarship</p>
+                <p>Awarded to Vietnamese students with strong academic performance (GPA above 8.0) and a spirit of perseverance.</p>
             </div>
-
-            <div class="services-box">
-                <i class='bx bx-wallet-alt'></i>
-                <h3>PwC Scholarship</h3>
-                <p>The PwC Scholarship supports talented students with excellent academic results, strong English and soft skills, and potential for future leadership in business and technology fields.</p>
-                <a href="javascript:void(0);" class="btn" onclick="toggleImage(this)">Read More</a>
-                <div class="image-container">
-                    <img src="https://res.cloudinary.com/dpfnbbiq4/image/upload/v1746801845/scholarship-2_oduqco.jpg" alt="Machine Learning" onclick="zoomImage(this)">
-                </div>
+            <div class="achievement-item">
+                <h4>PwC Scholarship</h4>
+                <p>2024 • Scholarship</p>
+                <p>Supports talented students with excellent academic results, strong English and soft skills, and leadership potential.</p>
             </div>
         </div>
     </section>
+
+    <!-- Modal for achievement details -->
+    <div id="achievement-modal" class="modal" aria-hidden="true">
+        <div class="modal-backdrop" data-close="true"></div>
+        <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="achievement-modal-title">
+            <button class="modal-close" aria-label="Close">×</button>
+            <h3 id="achievement-modal-title"></h3>
+            <div id="achievement-modal-meta" class="modal-meta"></div>
+            <div id="achievement-modal-desc" class="modal-desc"></div>
+            <div class="modal-image-wrap"><img id="achievement-modal-image" alt="Achievement image"/></div>
+        </div>
+    </div>
 
 
     <!-- Portfolio -->
@@ -161,7 +172,7 @@
         <h2 class="heading">Latest <span>Project</span></h2>
         <div class="portfolio-container">
             <div class="portfolio-box">
-                <img src="https://res.cloudinary.com/dpfnbbiq4/image/upload/v1746801843/project1_m1qb8c.png" alt="">
+                <img src="https://res.cloudinary.com/dpfnbbiq4/image/upload_v1746801843/project1_m1qb8c.png" alt="">
                 <div class="portfolio-layer">
                     <h4>End to End MovieDB Data Engineering</h4>
                     <p>This is a diagram of big data processing process (Big Data Pipeline), which integrates many tools such as Apache Kafka, Apache Spark, Apache Airflow and PostgreSQL...etc to build an end-to-end (end-to-end) data processing system.</p>
@@ -170,7 +181,7 @@
             </div>
 
             <div class="portfolio-box">
-                <img src="https://res.cloudinary.com/dpfnbbiq4/image/upload/v1746849664/project2_o6ob8v.png" alt="">
+                <img src="https://res.cloudinary.com/dpfnbbiq4/image/upload_v1746849664/project2_o6ob8v.png" alt="">
                 <div class="portfolio-layer">
                     <h4>Mobile AWS Pipeline Engineering</h4>
                     <p>Big data processing pipeline system, using PostgreSQL, Apache Kafka, Apache Spark, Apache Airflow and AWS S3 distributed storage to build a phone recommendation system for users.</p>
@@ -179,7 +190,7 @@
             </div>
 
             <div class="portfolio-box">
-                <img src="https://res.cloudinary.com/dpfnbbiq4/image/upload/v1749036435/work_flow_rhy3sc.png"  alt="">
+                <img src="https://res.cloudinary.com/dpfnbbiq4/image/upload_v1749036435/work_flow_rhy3sc.png"  alt="">
                 <div class="portfolio-layer">
                     <h4>CV Analysis using Langchain</h4>
                     <p>Built a CV analysis system using LLMs (LangChain, OpenAI) to extract and embed structured data. Enabled semantic search with FAISS and PostgreSQL, and deployed the app using FastAPI and Streamlit.</p>
@@ -188,7 +199,7 @@
             </div>
 
             <div class="portfolio-box">
-                <img src="https://res.cloudinary.com/dpfnbbiq4/image/upload/v1746801843/project3_ldadt6.png"  alt="">
+                <img src="https://res.cloudinary.com/dpfnbbiq4/image/upload_v1746801843/project3_ldadt6.png"  alt="">
                 <div class="portfolio-layer">
                     <h4>Movie Recommendation System</h4>
                     <p>This is a movie recommendation system that uses data from Kaggle to provide a list of compatible movies based on the content. The system applies Machine Learning algorithms to improve the user experience.</p>
@@ -198,7 +209,7 @@
 
 
             <div class="portfolio-box">
-                <img src="https://res.cloudinary.com/dpfnbbiq4/image/upload/v1746801844/project4_s2mjag.png" alt="">
+                <img src="https://res.cloudinary.com/dpfnbbiq4/image/upload_v1746801844/project4_s2mjag.png" alt="">
                 <div class="portfolio-layer">
                     <h4>Sales management system</h4>
                     <p>Sales Management System is a web application designed to help businesses manage sales efficiently</p>
@@ -207,7 +218,7 @@
             </div>
 
             <div class="portfolio-box">
-                <img src="https://res.cloudinary.com/dpfnbbiq4/image/upload/v1746801845/project5_owdbui.png" alt="">
+                <img src="https://res.cloudinary.com/dpfnbbiq4/image/upload_v1746801845/project5_owdbui.png" alt="">
                 <div class="portfolio-layer">
                     <h4>Clinic management</h4>
                     <p>The Clinic Management System is designed to manage clinic operations such as patient registration, medical form handling, invoice generation, report creation, and much more.</p>
@@ -245,8 +256,231 @@
         </div>
     </footer>
 
-    <!-- Scroll Reveal -->
-    <script src="https://unpkg.com/scrollreveal"></script>
+        <!-- Starfield (Three.js): canvas + module script -->
+        <canvas id="starfield"></canvas>
+        <script type="module">
+        import * as THREE from 'https://unpkg.com/three@0.160.0/build/three.module.js';
+        import { EffectComposer } from 'https://unpkg.com/three@0.160.0/examples/jsm/postprocessing/EffectComposer.js';
+        import { RenderPass } from 'https://unpkg.com/three@0.160.0/examples/jsm/postprocessing/RenderPass.js';
+        import { UnrealBloomPass } from 'https://unpkg.com/three@0.160.0/examples/jsm/postprocessing/UnrealBloomPass.js';
+
+        const canvas = document.getElementById('starfield');
+        const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+        renderer.setClearColor(0x000000, 0);
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(60, 2, 0.1, 5000);
+        camera.position.z = 1200;
+
+        // composer + bloom
+        const composer = new EffectComposer(renderer);
+        const renderPass = new RenderPass(scene, camera);
+        composer.addPass(renderPass);
+    // bloom: tuned for bright stars and meteors
+    const bloomPass = new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), 1.2, 0.9, 0.2);
+    bloomPass.threshold = 0.12; bloomPass.strength = 1.1; bloomPass.radius = 0.6;
+        composer.addPass(bloomPass);
+
+        function onResize(){
+            const w = window.innerWidth, h = window.innerHeight;
+            renderer.setSize(w,h,false);
+            composer.setSize(w,h);
+            camera.aspect = w/h; camera.updateProjectionMatrix();
+        }
+        onResize(); window.addEventListener('resize', onResize);
+
+        // starfield params
+        const STAR_COUNT = 5500;
+        const R = 1400;
+        const positions = new Float32Array(STAR_COUNT * 3);
+        const colors = new Float32Array(STAR_COUNT * 3);
+        const bright = new Float32Array(STAR_COUNT);
+        const phase = new Float32Array(STAR_COUNT);
+
+        function rand(min=0,max=1){ return Math.random()*(max-min)+min; }
+
+        for(let i=0;i<STAR_COUNT;i++){
+            const u = Math.random();
+            const y = (Math.random()*2-1) * 0.6 * Math.pow(u, 0.4);
+            const theta = Math.random() * Math.PI * 2;
+            const rxy = Math.sqrt(Math.max(0,1-y*y));
+            const x = rxy * Math.cos(theta);
+            const z = rxy * Math.sin(theta);
+            positions[i*3] = x*R; positions[i*3+1] = y*R; positions[i*3+2] = z*R;
+            const t = Math.random();
+            const col = new THREE.Color().setHSL(0.62 - 0.18*t, 0.25+0.35*t, 0.65+0.25*(1-t));
+            colors[i*3]=col.r; colors[i*3+1]=col.g; colors[i*3+2]=col.b;
+            bright[i]=Math.pow(Math.random(),3.0);
+            phase[i]=Math.random()*Math.PI*2;
+        }
+
+        const geo = new THREE.BufferGeometry();
+        geo.setAttribute('position', new THREE.BufferAttribute(positions,3));
+        geo.setAttribute('color', new THREE.BufferAttribute(colors,3));
+        geo.setAttribute('brightness', new THREE.BufferAttribute(bright,1));
+        geo.setAttribute('phase', new THREE.BufferAttribute(phase,1));
+
+        const mat = new THREE.ShaderMaterial({
+            transparent:true, depthWrite:false, blending:THREE.AdditiveBlending, vertexColors:true,
+            uniforms: { uTime:{value:0}, uSize:{value:8.0}, uPixelRatio:{value:Math.min(window.devicePixelRatio||1,2)} },
+            vertexShader: `
+                uniform float uTime, uSize, uPixelRatio;
+                attribute float brightness, phase;
+                varying float vBright; varying vec3 vColor;
+                void main(){
+                    vBright = brightness; vColor = color;
+                    vec4 mvPos = modelViewMatrix * vec4(position,1.0);
+                    float tw = 0.65 + 0.35 * sin(uTime*2.0 + phase);
+                    gl_Position = projectionMatrix * mvPos;
+                    gl_PointSize = uSize * (0.5 + 2.5*brightness) * tw * uPixelRatio / -mvPos.z;
+                }
+            `,
+            fragmentShader: `
+                varying float vBright; varying vec3 vColor;
+                void main(){ vec2 uv = gl_PointCoord - vec2(0.5); float d = length(uv);
+                    float alpha = smoothstep(0.5, 0.0, d);
+                    vec3 col = vColor * (0.35 + 1.6*vBright);
+                    gl_FragColor = vec4(col, alpha);
+                }
+            `
+        });
+
+        const stars = new THREE.Points(geo, mat);
+        scene.add(stars);
+
+        // constellations: sample edges (use RA/Dec list from earlier; small sample)
+        function raDecToVec(raHour, decDeg){ const ra=raHour/24*Math.PI*2; const dec=decDeg*Math.PI/180; return new THREE.Vector3(Math.cos(dec)*Math.cos(ra), Math.sin(dec), Math.cos(dec)*Math.sin(ra)).multiplyScalar(R); }
+        // sample constellations edges expressed as RA/Dec pairs (small set)
+        const CONST_DATA = [
+            {name:'Orion', edges:[ [5.9195,7.4071,5.4189,6.3497],[5.4189,6.3497,5.6036,-1.2019],[5.6036,-1.2019,5.2423,-8.2016] ]},
+            {name:'UrsaMajor', edges:[ [11.0621,61.7508,11.0307,56.3824],[11.0307,56.3824,11.8972,53.6948] ]}
+        ];
+        const constLines = [];
+        CONST_DATA.forEach(cd=>{
+            const pts = [];
+            cd.edges.forEach(e=>{ const a=raDecToVec(e[0],e[1]); const b=raDecToVec(e[2],e[3]); pts.push(a.x,a.y,a.z,b.x,b.y,b.z); });
+            const lgeo = new THREE.BufferGeometry(); lgeo.setAttribute('position', new THREE.BufferAttribute(new Float32Array(pts),3));
+            const lmat = new THREE.LineBasicMaterial({color:0xcfe6ff, transparent:true, opacity:0.0});
+            const line = new THREE.LineSegments(lgeo, lmat); scene.add(line); constLines.push({line, name:cd.name});
+        });
+
+        // meteors: pool of sprites with trailing lines and streak quads
+        const meteorGroup = new THREE.Group(); scene.add(meteorGroup);
+        const meteorPool = [];
+        function createMeteor(){
+            // core sphere (bright) and a streak plane + a trailing line
+            const coreMat = new THREE.MeshBasicMaterial({color:0xffffff, transparent:true, blending:THREE.AdditiveBlending});
+            const coreGeo = new THREE.SphereGeometry(3.5,6,6);
+            const core = new THREE.Mesh(coreGeo, coreMat);
+
+            // streak: a thin plane that will be oriented along velocity
+            const streakMat = new THREE.MeshBasicMaterial({color:0xfff9e8, transparent:true, opacity:0.85, blending:THREE.AdditiveBlending, depthWrite:false});
+            const streakGeo = new THREE.PlaneGeometry(1.0, 40.0);
+            const streak = new THREE.Mesh(streakGeo, streakMat);
+            streak.position.z = -10;
+
+            const container = new THREE.Object3D(); container.add(core); container.add(streak);
+            container.userData = {core, streak, vx:0, vy:0, vz:0, life:0, trailPts:[] , line:null };
+            meteorGroup.add(container); meteorPool.push(container); return container;
+        }
+        for(let i=0;i<6;i++) createMeteor();
+        function spawnMeteor(){
+            // pick inactive or create
+            const m = meteorPool.find(p=>p.userData.life<=0) || createMeteor();
+            const angle = Math.random()*Math.PI*2; const dist = R*1.1; const x = Math.cos(angle)*dist; const y = (Math.random()*2-1)*R*0.6; const z = Math.sin(angle)*dist;
+            m.position.set(x,y,z);
+            // target/fly-through vector
+            const tx = (Math.random()-0.5)*200; const ty = (Math.random()-0.5)*200; const tz = (Math.random()-0.5)*200;
+            m.userData.vx = (tx - x) * 0.01; m.userData.vy = (ty - y) * 0.01; m.userData.vz = (tz - z) * 0.01;
+            m.userData.life = 140 + Math.random()*90; m.userData.trailPts = [];
+            // create or reset line trail
+            if (m.userData.line){ m.userData.line.geometry.setAttribute('position', new THREE.BufferAttribute(new Float32Array(0),3)); m.userData.line.visible=true; }
+            else {
+                const lineGeo = new THREE.BufferGeometry(); const lineMat = new THREE.LineBasicMaterial({color:0xfff2d6, transparent:true, opacity:0.95, blending:THREE.AdditiveBlending});
+                const line = new THREE.Line(lineGeo, lineMat); scene.add(line); m.userData.line = line;
+            }
+            // stretch streak length randomly
+            m.userData.streakLength = 60 + Math.random()*120;
+            m.userData.core.material.opacity = 1.0;
+        }
+
+        // occasionally spawn
+        let lastMeteor = 0;
+
+        // basic pointer parallax
+        let targetX=0,targetY=0;
+        window.addEventListener('mousemove',(e)=>{ targetX=(e.clientX/window.innerWidth-0.5)*0.6; targetY=(e.clientY/window.innerHeight-0.5)*0.6; });
+
+        // label DOM for constellations
+        CONST_DATA.forEach(cd=>{ const el = document.createElement('div'); el.className='const-label'; el.textContent = cd.name; el.style.opacity='0'; document.body.appendChild(el); cd._label = el; });
+
+        // raycaster to hover points and show lines
+        const ray = new THREE.Raycaster(); ray.params.Points = { threshold: 10 };
+        const pointer = new THREE.Vector2(); let hoverIdx=-1;
+        window.addEventListener('pointermove',(e)=>{ pointer.x = (e.clientX/window.innerWidth)*2-1; pointer.y = -(e.clientY/window.innerHeight)*2+1; ray.setFromCamera(pointer, camera); const hits = ray.intersectObject(stars); if(hits.length){ const idx = hits[0].index; /* show any line near this hit by projecting */ constLines.forEach((c,i)=>{ c.line.material.opacity = 0; }); } else { constLines.forEach(c=>c.line.material.opacity=0); } });
+
+        // animate
+        function animate(t){
+            t *= 0.001; mat.uniforms.uTime.value = t;
+            // brighten stars slightly for bloom coupling
+            mat.uniforms.uSize.value = 8.0 + Math.sin(t*0.12)*0.5;
+            // twinkle handled in shader, rotate sky slightly
+            stars.rotation.y += 0.000055;
+            // spawn meteors more naturally (poisson-like)
+            if (t - lastMeteor > 2.0 + Math.random()*5.0){ spawnMeteor(); lastMeteor = t; }
+            meteorPool.forEach(m=>{
+                if (m.userData.life>0){
+                    // advance
+                    m.position.x += m.userData.vx; m.position.y += m.userData.vy; m.position.z += m.userData.vz;
+                    // sample trail points (store recent world positions)
+                    m.userData.trailPts.push(m.position.clone()); if (m.userData.trailPts.length > m.userData.streakLength) m.userData.trailPts.shift();
+                    m.userData.life -= 1;
+                    // fade core
+                    m.userData.core.material.opacity = Math.max(0, m.userData.life / 120);
+
+                    // update streak orientation and scale
+                    const vel = new THREE.Vector3(m.userData.vx, m.userData.vy, m.userData.vz).normalize();
+                    // orient streak plane to face velocity
+                    const up = new THREE.Vector3(0,1,0);
+                    const cross = new THREE.Vector3().crossVectors(up, vel).normalize();
+                    m.userData.streak.lookAt(m.position.x + vel.x, m.position.y + vel.y, m.position.z + vel.z);
+                    // stretch streak proportional to speed
+                    const speed = Math.max(0.5, Math.sqrt(m.userData.vx*m.userData.vx + m.userData.vy*m.userData.vy + m.userData.vz*m.userData.vz)*40);
+                    m.userData.streak.scale.set(1.0, Math.min(1.0, m.userData.streakLength/40) * (1.0 + speed));
+
+                    // update trail line geometry to show fading tail
+                    if (m.userData.line){
+                        const pts = m.userData.trailPts; const arr = new Float32Array(pts.length*3);
+                        for(let i=0;i<pts.length;i++){ arr[i*3]=pts[i].x; arr[i*3+1]=pts[i].y; arr[i*3+2]=pts[i].z; }
+                        m.userData.line.geometry.setAttribute('position', new THREE.BufferAttribute(arr,3));
+                        m.userData.line.geometry.needsUpdate = true;
+                        // set opacity scaled by remaining life
+                        m.userData.line.material.opacity = Math.max(0.0, m.userData.life / 140);
+                    }
+                }
+            });
+            // update constellation labels positions and simple fade logic
+            CONST_DATA.forEach((cd,ci)=>{
+                // compute centroid of edges points
+                let cx=0,cy=0,cz=0,count=0; cd.edges.forEach(e=>{ const v = raDecToVec(e[0], e[1]); cx+=v.x;cy+=v.y;cz+=v.z; count++; });
+                const v3 = new THREE.Vector3(cx/count, cy/count, cz/count);
+                v3.project(camera); const sx = (v3.x*0.5+0.5)*window.innerWidth; const sy = (-v3.y*0.5+0.5)*window.innerHeight;
+                cd._label.style.transform = `translate(-50%,-50%) translate(${Math.round(sx)}px, ${Math.round(sy)}px)`;
+            });
+
+            // update camera parallax
+            camera.position.x += (targetX*300 - camera.position.x) * 0.02;
+            camera.position.y += (-targetY*200 - camera.position.y) * 0.02;
+            camera.lookAt(0,0,0);
+
+            composer.render();
+            requestAnimationFrame(animate);
+        }
+        requestAnimationFrame(animate);
+        </script>
+
+        <!-- Scroll Reveal -->
+        <script src="https://unpkg.com/scrollreveal"></script>
 
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 
