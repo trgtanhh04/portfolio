@@ -14,18 +14,50 @@
     <!-- Galaxy animated background canvas -->
     <canvas id="galaxy-canvas" class="galaxy-canvas" aria-hidden="true"></canvas>
 
-    <header class="header">
-        <a href="#" class="logo">Portfolio</a>
-        <i class='bx bx-menu' id="menu-icon"></i>
-        <nav class="navbar">
-            <a href="#home" class="active">Home</a></li>
-            <a href="#about" class="">About</a></li>
-            <a href="#experience" class="">Experience</a></li>
-            <a href="#services" class="">Achievement</a></li>
-            <a href="#portfolio" class="">Portfolio</a></li>
-            <a href="#contact" class="">Contact</a></li>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h2 class="logo">trgtanhh04</h2>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#home" class="nav-item active">
+                <i class='bx bx-home'></i>
+                <span>Home</span>
+            </a>
+            <a href="#about" class="nav-item">
+                <i class='bx bx-user'></i>
+                <span>About</span>
+            </a>
+            <a href="#experience" class="nav-item">
+                <i class='bx bx-briefcase'></i>
+                <span>Experience</span>
+            </a>
+            <a href="#services" class="nav-item">
+                <i class='bx bx-trophy'></i>
+                <span>Certificates</span>
+            </a>
+            <a href="#portfolio" class="nav-item">
+                <i class='bx bx-folder'></i>
+                <span>Projects</span>
+            </a>
+            <a href="#contact" class="nav-item">
+                <i class='bx bx-envelope'></i>
+                <span>Contact</span>
+            </a>
         </nav>
-    </header>
+        <div class="sidebar-footer">
+            <p>&copy; trgtanhh04</p>
+            <p>Last updated: 2/11/2025</p>
+        </div>
+    </aside>
+
+    <!-- Mobile Toggle -->
+    <button class="mobile-toggle" id="mobile-toggle">
+        <i class='bx bx-menu'></i>
+    </button>
+
+    <!-- Main Content -->
+    <main class="main-content">
 
     <!-- Home -->
     <section class="home" id="home">
@@ -131,48 +163,56 @@
                 </div>
             </div> -->
         </div>
+    </section>
 
-    <!-- Achievement (compact grid) -->
-    <section class="achievements" id="services">
-        <h2 class="heading">My <span>Achievement</span></h2>
-        <div class="achievement-list">
-            <div class="achievement-item">
-                <h4>TOEIC</h4>
-                <p>2023 • Exam</p>
-                <p>Issued by IIG Vietnam — the exclusive organization authorized to administer and award the TOEIC test in Vietnam.</p>
+    <!-- Certificates/Achievement -->
+    <section class="certificates" id="services">
+        <h2 class="heading">My <span>Certificates</span></h2>
+        <div class="certificates-container">
+            <div class="certificate-card">
+                <div class="certificate-image">
+                    <img src="https://via.placeholder.com/350x250?text=TOEIC+Certificate" alt="TOEIC Certificate" loading="lazy">
+                    <div class="certificate-badge">5 Courses</div>
+                </div>
+                <div class="certificate-content">
+                    <h3>TOEIC</h3>
+                    <p class="certificate-issuer">Issued by: IIG Vietnam</p>
+                    <p class="certificate-desc">Issued by IIG Vietnam — the exclusive organization authorized to administer and award the TOEIC test in Vietnam.</p>
+                </div>
             </div>
-            <div class="achievement-item">
-                <h4>Dong Hanh Scholarship</h4>
-                <p>2024 • Scholarship</p>
-                <p>Awarded to Vietnamese students with strong academic performance (GPA above 8.0) and a spirit of perseverance.</p>
+
+            <div class="certificate-card">
+                <div class="certificate-image">
+                    <img src="https://via.placeholder.com/350x250?text=Dong+Hanh+Scholarship" alt="Dong Hanh Scholarship" loading="lazy">
+                    <div class="certificate-badge">4 Courses</div>
+                </div>
+                <div class="certificate-content">
+                    <h3>Dong Hanh Scholarship</h3>
+                    <p class="certificate-issuer">Issued by: Dong Hanh Foundation</p>
+                    <p class="certificate-desc">Awarded to Vietnamese students with strong academic performance (GPA above 8.0) and a spirit of perseverance.</p>
+                </div>
             </div>
-            <div class="achievement-item">
-                <h4>PwC Scholarship</h4>
-                <p>2024 • Scholarship</p>
-                <p>Supports talented students with excellent academic results, strong English and soft skills, and leadership potential.</p>
+
+            <div class="certificate-card">
+                <div class="certificate-image">
+                    <img src="https://via.placeholder.com/350x250?text=PwC+Scholarship" alt="PwC Scholarship" loading="lazy">
+                    <div class="certificate-badge">6 Courses</div>
+                </div>
+                <div class="certificate-content">
+                    <h3>PwC Scholarship</h3>
+                    <p class="certificate-issuer">Issued by: PwC Vietnam</p>
+                    <p class="certificate-desc">Supports talented students with excellent academic results, strong English and soft skills, and leadership potential.</p>
+                </div>
             </div>
         </div>
     </section>
-
-    <!-- Modal for achievement details -->
-    <div id="achievement-modal" class="modal" aria-hidden="true">
-        <div class="modal-backdrop" data-close="true"></div>
-        <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="achievement-modal-title">
-            <button class="modal-close" aria-label="Close">×</button>
-            <h3 id="achievement-modal-title"></h3>
-            <div id="achievement-modal-meta" class="modal-meta"></div>
-            <div id="achievement-modal-desc" class="modal-desc"></div>
-            <div class="modal-image-wrap"><img id="achievement-modal-image" alt="Achievement image"/></div>
-        </div>
-    </div>
-
 
     <!-- Portfolio -->
      <section class="portfolio" id="portfolio">
         <h2 class="heading">Latest <span>Project</span></h2>
         <div class="portfolio-container">
             <div class="portfolio-box">
-                <img src="https://res.cloudinary.com/dpfnbbiq4/image/upload_v1746801843/project1_m1qb8c.png" alt="">
+                <img src="https://res.cloudinary.com/dpfnbbiq4/image/upload/v1746801843/project1_m1qb8c.png" alt="">
                 <div class="portfolio-layer">
                     <h4>End to End MovieDB Data Engineering</h4>
                     <p>This is a diagram of big data processing process (Big Data Pipeline), which integrates many tools such as Apache Kafka, Apache Spark, Apache Airflow and PostgreSQL...etc to build an end-to-end (end-to-end) data processing system.</p>
@@ -181,7 +221,7 @@
             </div>
 
             <div class="portfolio-box">
-                <img src="https://res.cloudinary.com/dpfnbbiq4/image/upload_v1746849664/project2_o6ob8v.png" alt="">
+                <img src="https://res.cloudinary.com/dpfnbbiq4/image/upload/v1746849664/project2_o6ob8v.png" alt="">
                 <div class="portfolio-layer">
                     <h4>Mobile AWS Pipeline Engineering</h4>
                     <p>Big data processing pipeline system, using PostgreSQL, Apache Kafka, Apache Spark, Apache Airflow and AWS S3 distributed storage to build a phone recommendation system for users.</p>
@@ -190,7 +230,7 @@
             </div>
 
             <div class="portfolio-box">
-                <img src="https://res.cloudinary.com/dpfnbbiq4/image/upload_v1749036435/work_flow_rhy3sc.png"  alt="">
+                <img src="https://res.cloudinary.com/dpfnbbiq4/image/upload/v1749036435/work_flow_rhy3sc.png" alt="">
                 <div class="portfolio-layer">
                     <h4>CV Analysis using Langchain</h4>
                     <p>Built a CV analysis system using LLMs (LangChain, OpenAI) to extract and embed structured data. Enabled semantic search with FAISS and PostgreSQL, and deployed the app using FastAPI and Streamlit.</p>
@@ -199,7 +239,7 @@
             </div>
 
             <div class="portfolio-box">
-                <img src="https://res.cloudinary.com/dpfnbbiq4/image/upload_v1746801843/project3_ldadt6.png"  alt="">
+                <img src="https://res.cloudinary.com/dpfnbbiq4/image/upload/v1746801843/project3_ldadt6.png" alt="">
                 <div class="portfolio-layer">
                     <h4>Movie Recommendation System</h4>
                     <p>This is a movie recommendation system that uses data from Kaggle to provide a list of compatible movies based on the content. The system applies Machine Learning algorithms to improve the user experience.</p>
@@ -207,9 +247,8 @@
                 </div>
             </div>
 
-
             <div class="portfolio-box">
-                <img src="https://res.cloudinary.com/dpfnbbiq4/image/upload_v1746801844/project4_s2mjag.png" alt="">
+                <img src="https://res.cloudinary.com/dpfnbbiq4/image/upload/v1746801844/project4_s2mjag.png" alt="">
                 <div class="portfolio-layer">
                     <h4>Sales management system</h4>
                     <p>Sales Management System is a web application designed to help businesses manage sales efficiently</p>
@@ -218,7 +257,7 @@
             </div>
 
             <div class="portfolio-box">
-                <img src="https://res.cloudinary.com/dpfnbbiq4/image/upload_v1746801845/project5_owdbui.png" alt="">
+                <img src="https://res.cloudinary.com/dpfnbbiq4/image/upload/v1746801845/project5_owdbui.png" alt="">
                 <div class="portfolio-layer">
                     <h4>Clinic management</h4>
                     <p>The Clinic Management System is designed to manage clinic operations such as patient registration, medical form handling, invoice generation, report creation, and much more.</p>
@@ -478,6 +517,8 @@
         }
         requestAnimationFrame(animate);
         </script>
+
+    </main>
 
         <!-- Scroll Reveal -->
         <script src="https://unpkg.com/scrollreveal"></script>

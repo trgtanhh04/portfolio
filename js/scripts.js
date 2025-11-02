@@ -1,38 +1,78 @@
 
+// Mobile sidebar toggle
+const mobileToggle = document.getElementById('mobile-toggle');
+const sidebar = document.querySelector('.sidebar');
+
+if (mobileToggle) {
+    mobileToggle.onclick = () => {
+        sidebar.classList.toggle('active');
+    };
+}
+
+// Smooth scroll to sections
+document.querySelectorAll('.nav-item').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+        
+        if (targetSection) {
+            // Close mobile sidebar
+            if (window.innerWidth <= 991) {
+                sidebar.classList.remove('active');
+            }
+            
+            // Simple scroll to element
+            targetSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+            
+            // Update active state
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            this.classList.add('active');
+        }
+    });
+});
+
+// Old menu icon code (kept for compatibility)
 let menuIcon = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
-menuIcon.onclick = () => {
-    menuIcon.classList.toggle('bx-x');
-    navbar.classList.toggle('active');
+if (menuIcon && navbar) {
+    menuIcon.onclick = () => {
+        menuIcon.classList.toggle('bx-x');
+        navbar.classList.toggle('active');
+    }
 }
 
 // ----------------------------------
 
 let sections = document.querySelectorAll('section');
-let navLinks = document.querySelectorAll('header nav a');
+let navLinks = document.querySelectorAll('.nav-item');
 
-window.onscroll = () => {
+// Update active nav on scroll
+window.addEventListener('scroll', () => {
+    let current = 'home'; // Default to home
+    
     sections.forEach(section => {
-        let top = window.scrollY;
-        let offset = section.offsetTop - 150;
-        let height = section.offsetHeight;
-        let id = section.getAttribute('id');
-
-        if (top >= offset && top < offset + height) {
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
-            });
+        const sectionTop = section.getBoundingClientRect().top;
+        const sectionHeight = section.clientHeight;
+        
+        if (sectionTop <= 100 && sectionTop + sectionHeight > 100) {
+            current = section.getAttribute('id');
         }
-    })
+    });
 
-    let header = document.querySelector('header');
-    header.classList.toggle('sticky', window.scrollY > 100);
-
-
-    menuIcon.classList.remove('bx-x');
-    navbar.classList.remove('active');
-}
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+        }
+    });
+});
 
 
 // ----------------------------------
