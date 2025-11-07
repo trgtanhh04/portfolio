@@ -1,0 +1,199 @@
+/* About Section Styles */
+
+.about {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5rem;
+    background: transparent;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.about-img {
+    flex: 0 0 auto;
+    position: relative;
+}
+
+.about-img::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background: linear-gradient(45deg, var(--main-color), #00b7ff, #a78bfa);
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0.3;
+    animation: pulse-glow 3s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.5;
+    }
+}
+
+.about-img img {
+    width: 35rem;
+    height: 35rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--main-color);
+    box-shadow: 0 0 30px rgba(14, 239, 255, 0.4);
+    transition: all 0.5s ease;
+}
+
+.about-img img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 50px rgba(14, 239, 255, 0.8);
+}
+
+.about-content {
+    flex: 1;
+    min-width: 45rem;
+}
+
+.about-content h2 {
+    text-align: left;
+    line-height: 1.2;
+    position: relative;
+    display: inline-block;
+}
+
+.about-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--main-color), transparent);
+    border-radius: 2px;
+}
+
+.about-content h3 {
+    font-size: 3.2rem;
+    background: linear-gradient(135deg, var(--main-color), #00b7ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-top: 2rem;
+}
+
+.about-content p {
+    font-size: 2rem;
+    line-height: 1.8;
+    margin: 2rem 0 3rem;
+    position: relative;
+    padding-left: 2rem;
+}
+
+.about-content p::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, var(--main-color), transparent);
+    border-radius: 2px;
+}
+
+.about-content ul {
+    font-size: 2rem;
+    line-height: 1.8;
+    list-style: none;
+    padding: 0;
+}
+
+.about-content ul li {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    padding-left: 3rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.about-content ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background: var(--main-color);
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(14, 239, 255, 0.6);
+    animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+    0%, 100% {
+        box-shadow: 0 0 15px rgba(14, 239, 255, 0.6);
+    }
+    50% {
+        box-shadow: 0 0 25px rgba(14, 239, 255, 1);
+    }
+}
+
+.about-content ul li:hover {
+    transform: translateX(10px);
+    color: var(--main-color);
+}
+
+.about-content ul li:hover::before {
+    background: linear-gradient(135deg, var(--main-color), #00b7ff);
+    box-shadow: 0 0 30px rgba(14, 239, 255, 1);
+}
+
+.about-content blockquote {
+    font-size: 2rem;
+    font-style: italic;
+    line-height: 1.8;
+    margin: 3rem 0;
+    padding: 2rem 3rem;
+    background: rgba(14, 239, 255, 0.05);
+    border-left: 5px solid var(--main-color);
+    border-radius: 0 1rem 1rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-content blockquote::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    font-size: 8rem;
+    color: var(--main-color);
+    opacity: 0.2;
+    font-family: Georgia, serif;
+}
+
+.about-content blockquote::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(14, 239, 255, 0.1), transparent);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}

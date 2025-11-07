@@ -1,0 +1,163 @@
+/* Animations & Visual Effects */
+
+/* Galaxy background canvas */
+.galaxy-canvas {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.95;
+    mix-blend-mode: normal;
+    transition: opacity 0.6s ease;
+}
+
+/* Place main content above the canvas */
+body > *:not(.galaxy-canvas) {
+    position: relative;
+    z-index: 1;
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .galaxy-canvas {
+        display: none;
+    }
+}
+
+/* Planet label hints */
+.galaxy-legend {
+    position: fixed;
+    right: 1.6rem;
+    bottom: 1.6rem;
+    z-index: 120;
+    background: rgba(10, 12, 16, 0.6);
+    padding: .6rem 1rem;
+    border-radius: .8rem;
+    color: #cfeffd;
+    font-size: 1.2rem;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* Starfield canvas (Three.js) */
+#starfield {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+    mix-blend-mode: screen;
+}
+
+.const-label {
+    position: fixed;
+    color: #cfe6ff;
+    font-size: 1.2rem;
+    padding: .25rem .6rem;
+    background: rgba(5, 10, 20, 0.45);
+    border-radius: .6rem;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    transition: opacity .25s ease, transform .25s ease;
+    z-index: 110;
+}
+
+/* Meteor trail effects */
+.meteor-trail-fallback {
+    filter: blur(0.6px);
+}
+
+/* Modal animations */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-dialog {
+    background: var(--second-bg-color);
+    color: var(--text-color);
+    padding: 2rem;
+    border-radius: 1rem;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Image overlay effects */
+.image-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 2000;
+    cursor: pointer;
+}
+
+.image-overlay img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+/* Portfolio layer transition */
+.portfolio-layer {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    overflow-y: auto;
+}
+
+.portfolio-box:hover .portfolio-layer {
+    opacity: 1;
+}

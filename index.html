@@ -7,7 +7,8 @@
     <title> Trgtanhh</title> 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://upload-widget.cloudinary.com/global/all.js"></script>
-    <link rel="stylesheet" href="css/style.css">
+    <!-- New Modular CSS Structure -->
+    <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
@@ -208,64 +209,130 @@
     </section>
 
     <!-- Portfolio -->
-     <section class="portfolio" id="portfolio">
+    <section class="portfolio" id="portfolio">
         <h2 class="heading">Latest <span>Project</span></h2>
         <div class="portfolio-container">
+            <!-- Project 1: MovieDB Data Engineering -->
             <div class="portfolio-box">
-                <img src="https://res.cloudinary.com/dpfnbbiq4/image/upload/v1746801843/project1_m1qb8c.png" alt="">
-                <div class="portfolio-layer">
-                    <h4>End to End MovieDB Data Engineering</h4>
-                    <p>This is a diagram of big data processing process (Big Data Pipeline), which integrates many tools such as Apache Kafka, Apache Spark, Apache Airflow and PostgreSQL...etc to build an end-to-end (end-to-end) data processing system.</p>
-                    <a href="https://github.com/trgtanhh04/End-to-End-MovieDB-Data-Engineering" target="_blank"><i class='bx bx-link-external'></i></a>
+                <div class="portfolio-image" onclick="window.open('https://github.com/trgtanhh04/End-to-End-MovieDB-Data-Engineering', '_blank')">
+                    <img src="https://res.cloudinary.com/dpfnbbiq4/image/upload/v1746801843/project1_m1qb8c.png" alt="MovieDB Data Engineering">
+                    <span class="portfolio-badge">Data Engineering</span>
+                </div>
+                <div class="portfolio-content">
+                    <h3>End to End MovieDB</h3>
+                    <p class="portfolio-category">Big Data Pipeline</p>
+                    <p class="portfolio-desc">
+                        This is a diagram of big data processing (Big Data Pipeline), which integrates Apache Kafka, Apache Spark, Apache Airflow and PostgreSQL to build an end-to-end data processing system.
+                    </p>
+                    <div class="portfolio-links">
+                        <a href="https://github.com/trgtanhh04/End-to-End-MovieDB-Data-Engineering" target="_blank" class="btn">
+                            <i class='bx bxl-github'></i> View Code
+                        </a>
+                    </div>
                 </div>
             </div>
 
+            <!-- Project 2: Mobile AWS Pipeline -->
             <div class="portfolio-box">
-                <img src="https://res.cloudinary.com/dpfnbbiq4/image/upload/v1746849664/project2_o6ob8v.png" alt="">
-                <div class="portfolio-layer">
-                    <h4>Mobile AWS Pipeline Engineering</h4>
-                    <p>Big data processing pipeline system, using PostgreSQL, Apache Kafka, Apache Spark, Apache Airflow and AWS S3 distributed storage to build a phone recommendation system for users.</p>
-                    <a href="https://github.com/trgtanhh04/Mobile-AWS-Pipeline-Engineering" target="_blank"><i class='bx bx-link-external'></i></a>
+                <div class="portfolio-image" onclick="window.open('https://github.com/trgtanhh04/Mobile-AWS-Pipeline-Engineering', '_blank')">
+                    <img src="https://res.cloudinary.com/dpfnbbiq4/image/upload/v1746849664/project2_o6ob8v.png" alt="Mobile AWS Pipeline">
+                    <span class="portfolio-badge">AWS Pipeline</span>
+                </div>
+                <div class="portfolio-content">
+                    <h3>Mobile AWS Pipeline</h3>
+                    <p class="portfolio-category">Cloud Data Engineering</p>
+                    <p class="portfolio-desc">
+                        Big data processing pipeline using PostgreSQL, Apache Kafka, Spark, Airflow and AWS S3 to build a phone recommendation system.
+                    </p>
+                    <div class="portfolio-links">
+                        <a href="https://github.com/trgtanhh04/Mobile-AWS-Pipeline-Engineering" target="_blank" class="btn">
+                            <i class='bx bxl-github'></i> View Code
+                        </a>
+                    </div>
                 </div>
             </div>
 
+            <!-- Project 3: CV Analysis -->
             <div class="portfolio-box">
-                <img src="https://res.cloudinary.com/dpfnbbiq4/image/upload/v1749036435/work_flow_rhy3sc.png" alt="">
-                <div class="portfolio-layer">
-                    <h4>CV Analysis using Langchain</h4>
-                    <p>Built a CV analysis system using LLMs (LangChain, OpenAI) to extract and embed structured data. Enabled semantic search with FAISS and PostgreSQL, and deployed the app using FastAPI and Streamlit.</p>
-                    <a href="https://github.com/trgtanhh04/CV-Analysis-using-Langchain" target="_blank"><i class='bx bx-link-external'></i></a>
+                <div class="portfolio-image" onclick="window.open('https://github.com/trgtanhh04/CV-Analysis-using-Langchain', '_blank')">
+                    <img src="https://res.cloudinary.com/dpfnbbiq4/image/upload/v1749036435/work_flow_rhy3sc.png" alt="CV Analysis">
+                    <span class="portfolio-badge">AI/ML</span>
+                </div>
+                <div class="portfolio-content">
+                    <h3>CV Analysis using LangChain</h3>
+                    <p class="portfolio-category">AI Engineering</p>
+                    <p class="portfolio-desc">
+                        Built a CV analysis system using LLMs (LangChain, OpenAI) to extract and embed structured data. Enabled semantic search with FAISS and PostgreSQL, deployed with FastAPI and Streamlit.
+                    </p>
+                    <div class="portfolio-links">
+                        <a href="https://github.com/trgtanhh04/CV-Analysis-using-Langchain" target="_blank" class="btn">
+                            <i class='bx bxl-github'></i> View Code
+                        </a>
+                    </div>
                 </div>
             </div>
 
+            <!-- Project 4: Movie Recommendation -->
             <div class="portfolio-box">
-                <img src="https://res.cloudinary.com/dpfnbbiq4/image/upload/v1746801843/project3_ldadt6.png" alt="">
-                <div class="portfolio-layer">
-                    <h4>Movie Recommendation System</h4>
-                    <p>This is a movie recommendation system that uses data from Kaggle to provide a list of compatible movies based on the content. The system applies Machine Learning algorithms to improve the user experience.</p>
-                    <a href="https://github.com/trgtanhh04/Movie-Recommendation-System" target="_blank"><i class='bx bx-link-external'></i></a>
+                <div class="portfolio-image" onclick="window.open('https://github.com/trgtanhh04/Movie-Recommendation-System', '_blank')">
+                    <img src="https://res.cloudinary.com/dpfnbbiq4/image/upload/v1746801843/project3_ldadt6.png" alt="Movie Recommendation">
+                    <span class="portfolio-badge">Machine Learning</span>
+                </div>
+                <div class="portfolio-content">
+                    <h3>Movie Recommendation System</h3>
+                    <p class="portfolio-category">Recommendation Engine</p>
+                    <p class="portfolio-desc">
+                        Movie recommendation system using Kaggle data to provide compatible movies based on content. Applies ML algorithms to improve user experience.
+                    </p>
+                    <div class="portfolio-links">
+                        <a href="https://github.com/trgtanhh04/Movie-Recommendation-System" target="_blank" class="btn">
+                            <i class='bx bxl-github'></i> View Code
+                        </a>
+                    </div>
                 </div>
             </div>
 
+            <!-- Project 5: Sales Management -->
             <div class="portfolio-box">
-                <img src="https://res.cloudinary.com/dpfnbbiq4/image/upload/v1746801844/project4_s2mjag.png" alt="">
-                <div class="portfolio-layer">
-                    <h4>Sales management system</h4>
-                    <p>Sales Management System is a web application designed to help businesses manage sales efficiently</p>
-                    <a href="https://github.com/trgtanhh04/Sales-management-system" target="_blank"><i class='bx bx-link-external'></i></a>
+                <div class="portfolio-image" onclick="window.open('https://github.com/trgtanhh04/Sales-management-system', '_blank')">
+                    <img src="https://res.cloudinary.com/dpfnbbiq4/image/upload/v1746801844/project4_s2mjag.png" alt="Sales Management">
+                    <span class="portfolio-badge">Web App</span>
+                </div>
+                <div class="portfolio-content">
+                    <h3>Sales Management System</h3>
+                    <p class="portfolio-category">Business Application</p>
+                    <p class="portfolio-desc">
+                        Web application designed to help businesses manage sales efficiently with inventory tracking, reporting, and analytics.
+                    </p>
+                    <div class="portfolio-links">
+                        <a href="https://github.com/trgtanhh04/Sales-management-system" target="_blank" class="btn">
+                            <i class='bx bxl-github'></i> View Code
+                        </a>
+                    </div>
                 </div>
             </div>
 
+            <!-- Project 6: Clinic Management -->
             <div class="portfolio-box">
-                <img src="https://res.cloudinary.com/dpfnbbiq4/image/upload/v1746801845/project5_owdbui.png" alt="">
-                <div class="portfolio-layer">
-                    <h4>Clinic management</h4>
-                    <p>The Clinic Management System is designed to manage clinic operations such as patient registration, medical form handling, invoice generation, report creation, and much more.</p>
-                    <a href="https://github.com/trgtanhh04/Clinic-management" target="_blank"><i class='bx bx-link-external'></i></a>
+                <div class="portfolio-image" onclick="window.open('https://github.com/trgtanhh04/Clinic-management', '_blank')">
+                    <img src="https://res.cloudinary.com/dpfnbbiq4/image/upload/v1746801845/project5_owdbui.png" alt="Clinic Management">
+                    <span class="portfolio-badge">Healthcare</span>
+                </div>
+                <div class="portfolio-content">
+                    <h3>Clinic Management System</h3>
+                    <p class="portfolio-category">Healthcare Management</p>
+                    <p class="portfolio-desc">
+                        Designed to manage clinic operations such as patient registration, medical forms, invoice generation, report creation, and more.
+                    </p>
+                    <div class="portfolio-links">
+                        <a href="https://github.com/trgtanhh04/Clinic-management" target="_blank" class="btn">
+                            <i class='bx bxl-github'></i> View Code
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-     </section>
+    </section>
 
     <!-- Contact -->
     <section class="contact" id="contact">
@@ -520,16 +587,18 @@
 
     </main>
 
-        <!-- Scroll Reveal -->
-        <script src="https://unpkg.com/scrollreveal"></script>
-
+    <!-- External Libraries -->
+    <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-
-    <!-- Import EmailJS SDK -->
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
-
+    <!-- Configuration -->
     <script src="config.js"></script>
-    <script src="js/scripts.js"></script>
+    
+    <!-- Main JavaScript (Modular) -->
+    <script type="module" src="js/main.js"></script>
+    
+    <!-- Fallback for old browsers (non-module) -->
+    <script nomodule src="js/scripts.js"></script>
     </body>
 </html>

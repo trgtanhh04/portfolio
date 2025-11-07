@@ -1,0 +1,300 @@
+/* Components - Buttons, Forms, Cards, Modals */
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 1.2rem 3.5rem;
+    background: linear-gradient(135deg, var(--main-color), #00b7ff);
+    border-radius: 5rem;
+    box-shadow: 0 0 30px rgba(14, 239, 255, 0.5);
+    font-size: 1.7rem;
+    color: var(--bg-color);
+    letter-spacing: .1rem;
+    font-weight: 700;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent;
+    opacity: 0;
+    animation: slideUp 1s ease forwards;
+    animation-delay: 1.3s;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 50px rgba(14, 239, 255, 0.8);
+    border-color: #fff;
+}
+
+.btn:active {
+    transform: translateY(-2px);
+}
+
+/* Social Media Links */
+.social-media {
+    display: flex;
+    gap: 1rem;
+    opacity: 0;
+    animation: slideUp 1s ease forwards;
+    animation-delay: 1.5s;
+}
+
+.social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    background: rgba(14, 239, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 2px solid var(--main-color);
+    border-radius: 50%;
+    font-size: 2.2rem;
+    color: var(--main-color);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.social-media a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--main-color), #00b7ff);
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: -1;
+}
+
+.social-media a:hover::before {
+    transform: translateY(0);
+}
+
+.social-media a:hover {
+    color: var(--bg-color);
+    border-color: transparent;
+    transform: translateY(-8px) rotate(360deg);
+    box-shadow: 0 10px 30px rgba(14, 239, 255, 0.6);
+}
+
+.social-media a i {
+    position: relative;
+    z-index: 1;
+}
+
+/* Certificate Cards */
+.certificates-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.certificate-card {
+    background: rgba(50, 57, 70, 0.4);
+    backdrop-filter: blur(15px);
+    border-radius: 2rem;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid transparent;
+    position: relative;
+    cursor: pointer;
+}
+
+.certificate-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 2rem;
+    padding: 2px;
+    background: linear-gradient(135deg, var(--main-color), transparent, #00b7ff);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.certificate-card:hover::before {
+    opacity: 1;
+}
+
+.certificate-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(14, 239, 255, 0.1), transparent);
+    transform: rotate(45deg);
+    transition: all 0.6s ease;
+    opacity: 0;
+}
+
+.certificate-card:hover::after {
+    opacity: 1;
+    animation: shine 1.5s ease-in-out infinite;
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    }
+    100% {
+        transform: translateX(100%) translateY(100%) rotate(45deg);
+    }
+}
+
+.certificate-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(14, 239, 255, 0.4);
+}
+
+.certificate-image {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+}
+
+.certificate-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(14, 239, 255, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+.certificate-card:hover .certificate-image::before {
+    opacity: 1;
+}
+
+.certificate-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: brightness(0.9);
+}
+
+.certificate-card:hover .certificate-image img {
+    transform: scale(1.1) rotate(2deg);
+    filter: brightness(1.1);
+}
+
+.certificate-badge {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    background: linear-gradient(135deg, rgba(14, 239, 255, 0.9), rgba(0, 183, 255, 0.9));
+    color: var(--bg-color);
+    padding: 0.8rem 1.5rem;
+    border-radius: 2rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    z-index: 2;
+    box-shadow: 0 5px 20px rgba(14, 239, 255, 0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.certificate-card:hover .certificate-badge {
+    transform: scale(1.1) translateY(-3px);
+    box-shadow: 0 8px 30px rgba(14, 239, 255, 0.8);
+}
+
+.certificate-content {
+    padding: 2.5rem;
+    position: relative;
+}
+
+.certificate-content h3 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    background: linear-gradient(135deg, #fff, rgba(14, 239, 255, 0.8));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.certificate-card:hover .certificate-content h3 {
+    transform: translateX(5px);
+}
+
+.certificate-issuer {
+    font-size: 1.4rem;
+    color: var(--main-color);
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.certificate-issuer::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--main-color);
+    font-weight: bold;
+    font-size: 1.6rem;
+    animation: pulse-check 2s ease-in-out infinite;
+}
+
+@keyframes pulse-check {
+    0%, 100% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+.certificate-desc {
+    font-size: 1.5rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.85);
+    transition: all 0.3s ease;
+}
+
+.certificate-card:hover .certificate-desc {
+    color: rgba(255, 255, 255, 0.95);
+}

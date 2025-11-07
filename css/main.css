@@ -1,0 +1,25 @@
+/* Main CSS File - Imports all modules */
+/* Import order: base → layout → components → sections → animations → responsive */
+
+/* Base Styles */
+@import url('base.css');
+
+/* Layout & Navigation */
+@import url('layout.css');
+
+/* Reusable Components */
+@import url('components.css');
+
+/* Section Styles */
+@import url('sections/home.css');
+@import url('sections/about.css');
+@import url('sections/experience.css');
+@import url('sections/services.css');
+@import url('sections/portfolio.css');
+@import url('sections/contact.css');
+
+/* Animations & Effects */
+@import url('animations.css');
+
+/* Responsive Design */
+@import url('responsive.css');

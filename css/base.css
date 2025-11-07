@@ -1,0 +1,125 @@
+/* Base styles - Reset, Variables, Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-color: #1f242d;
+    --second-bg-color: #323946;
+    --text-color: #fff;
+    --main-color: #0ef;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    min-height: 100vh;
+    padding: 0 6%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section#home {
+    padding: 0 6% !important;
+    min-height: 100vh !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 4rem !important;
+}
+
+section.home,
+section.about,
+section.portfolio,
+section.contact {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4rem;
+}
+
+.heading {
+    text-align: center;
+    font-size: 4.5rem;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.heading::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--main-color), transparent);
+    border-radius: 2px;
+}
+
+.heading::after {
+    content: '';
+    position: absolute;
+    bottom: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--main-color);
+    border-radius: 2px;
+    box-shadow: 0 0 20px var(--main-color);
+}
+
+span {
+    color: var(--main-color);
+    text-shadow: 0 0 20px rgba(14, 239, 255, 0.5);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--main-color), #00b7ff);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--main-color);
+    box-shadow: 0 0 20px var(--main-color);
+}
+
+/* Selection Styling */
+::selection {
+    background: var(--main-color);
+    color: var(--bg-color);
+}

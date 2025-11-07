@@ -1,0 +1,157 @@
+/* Portfolio/Projects Section Styles */
+
+.portfolio {
+    background: transparent;
+    padding-top: 10rem;
+}
+
+.portfolio h2 {
+    margin-bottom: 3rem;
+}
+
+.portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.portfolio-box {
+    background: rgba(50, 57, 70, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 1.5rem;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.portfolio-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(14, 239, 255, 0.2);
+}
+
+.portfolio-image {
+    position: relative;
+    width: 100%;
+    height: 160px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+    cursor: pointer;
+}
+
+.portfolio-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-box:hover .portfolio-image img {
+    transform: scale(1.05);
+}
+
+.portfolio-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(14, 239, 255, 0.9);
+    color: var(--bg-color);
+    padding: 0.4rem 0.9rem;
+    border-radius: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.portfolio-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.portfolio-content h3 {
+    font-size: 1.7rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    line-height: 1.3;
+}
+
+.portfolio-category {
+    font-size: 1.1rem;
+    color: var(--main-color);
+    font-weight: 600;
+    font-style: italic;
+    margin-bottom: 0.8rem;
+}
+
+.portfolio-desc {
+    font-size: 1.2rem;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1.2rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.portfolio-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+}
+
+.portfolio-links .btn {
+    flex: 1;
+    text-align: center;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.portfolio-links .btn:hover {
+    transform: translateY(-2px);
+}
+
+.portfolio-links .btn i {
+    font-size: 1.4rem;
+}
+
+/* Old overlay styles - keep for backward compatibility if needed */
+.portfolio-layer {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .portfolio-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .portfolio-image {
+        height: 200px;
+    }
+    
+    .portfolio-content h3 {
+        font-size: 2rem;
+    }
+    
+    .portfolio-desc {
+        font-size: 1.4rem;
+    }
+}
