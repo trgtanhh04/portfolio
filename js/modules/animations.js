@@ -1,7 +1,7 @@
 // Animations Module - Typing effects & Scroll animations
 
 // ScrollReveal Animations
-ScrollReveal({ 
+ScrollReveal({
     distance: '80px',
     duration: 2000,
     delay: 200
@@ -14,7 +14,7 @@ ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
 
 // Typed.js effect for home section
 const typed = new Typed('.multiple-text', {
-    strings: ['Data Engineer', 'AI Engineer', 'Backend Developer'],
+    strings: ['AI Engineer', 'Data Engineer', 'Backend Developer'],
     typeSpeed: 100,
     backSpeed: 100,
     backDelay: 1000,
